@@ -42,16 +42,6 @@ qt_add_qml_module(appmtgDeckBuilder
         DeckPanel.qml
 )
 
-target_link_libraries(appmtgDeckBuilder
-    Qt6::Core
-    Qt6::Gui
-    Qt6::Quick
-    Qt6::QuickControls2
-    Qt6::Qml
-    Qt6::QmlIntegration
-    Qt6::Network
-)
-
 set_target_properties(appmtgDeckBuilder PROPERTIES
     MACOSX_BUNDLE TRUE
     WIN32_EXECUTABLE TRUE
