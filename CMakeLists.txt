@@ -6,8 +6,12 @@ set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 find_package(Qt6 REQUIRED COMPONENTS
+    Core
+    Gui
     Quick
     QuickControls2
+    Qml
+    QmlIntegration
     Network
 )
 
@@ -39,11 +43,13 @@ qt_add_qml_module(appmtgDeckBuilder
 )
 
 target_link_libraries(appmtgDeckBuilder
-    PRIVATE
-        Qt6::Core
-        Qt6::Quick
-        Qt6::QuickControls2
-        Qt6::Network
+    Qt6::Core
+    Qt6::Gui
+    Qt6::Quick
+    Qt6::QuickControls2
+    Qt6::Qml
+    Qt6::QmlIntegration
+    Qt6::Network
 )
 
 set_target_properties(appmtgDeckBuilder PROPERTIES
