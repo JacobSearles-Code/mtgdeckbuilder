@@ -29,7 +29,8 @@ qt_add_executable(appmtgDeckBuilder
     DeckManager.cpp
 )
 
-target_link_libraries(appmtgDeckBuilder
+# Link Qt components BEFORE qt_add_qml_module to avoid keyword/plain conflict
+target_link_libraries(appmtgDeckBuilder PRIVATE
     Qt6::Core
     Qt6::Gui
     Qt6::Quick
