@@ -16,7 +16,7 @@ jobs:
       - name: Install Qt 6.11.2
         uses: trollixx/setup-qt@v1
         with:
-          version: "6.11.2"
+          version: "6.9.2"
 
       - name: Configure MSVC
         uses: ilammy/msvc-dev-cmd@v1
