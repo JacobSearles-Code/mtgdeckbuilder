@@ -31,10 +31,16 @@ ApplicationWindow {
         "Sideboard"
     ]
 
-    function selectCard(index) {
-        var card =
-            ScryfallApi.searchModel.cardAt(index)
+    function safeModel() {
+        return ScryfallApi && ScryfallApi.searchModel ? ScryfallApi.searchModel : null
+    }
 
+    function selectCard(index) {
+        var model = safeModel()
+        if (!model || index < 0 || index >= model.count)
+            return
+
+        var card = model.cardAt(index)
         if (!card)
             return
 
@@ -48,32 +54,39 @@ ApplicationWindow {
     }
 
     function addSelectedCard() {
-        if (selectedCardId === "") {
+        if (selectedCardId === "")
             return
-        }
+
+        var model = safeModel()
+        if (!model)
+            return
 
         var index = cardGrid.currentIndex
-        var card = ScryfallApi.searchModel.cardAt(index)
-
-        if (!card) {
+        if (index < 0 || index >= model.count)
             return
-        }
+
+        var card = model.cardAt(index)
+        if (!card)
+            return
 
         DeckManager.addCard(card)
     }
 
     function addSelectedCommander() {
-
-        if (selectedCardId === "") {
+        if (selectedCardId === "")
             return
-        }
+
+        var model = safeModel()
+        if (!model)
+            return
 
         var index = cardGrid.currentIndex
-        var card = ScryfallApi.searchModel.cardAt(index)
-
-        if (!card) {
+        if (index < 0 || index >= model.count)
             return
-        }
+
+        var card = model.cardAt(index)
+        if (!card)
+            return
 
         if (DeckManager.addCommander(card)) {
             if (commanderFilter) {
@@ -84,9 +97,7 @@ ApplicationWindow {
 
     function refreshCommanderColors() {
         if (commanderFilter) {
-            ScryfallApi.setCommanderColors(
-                DeckManager.commanderColors
-            )
+            ScryfallApi.setCommanderColors(DeckManager.commanderColors)
         } else {
             ScryfallApi.setCommanderColors([])
         }
@@ -123,8 +134,7 @@ ApplicationWindow {
                     color: "#c7a75a"
                     font.pixelSize: 23
                     font.bold: true
-                    Layout.alignment:
-                        Qt.AlignVCenter
+                    Layout.alignment: Qt.AlignVCenter
                 }
 
                 Text {
@@ -132,8 +142,7 @@ ApplicationWindow {
                     color: "#77756b"
                     font.pixelSize: 12
                     font.letterSpacing: 2
-                    Layout.alignment:
-                        Qt.AlignVCenter
+                    Layout.alignment: Qt.AlignVCenter
                 }
 
                 Item {
@@ -142,26 +151,22 @@ ApplicationWindow {
 
                 Button {
                     text: "SAVE"
-                    onClicked:
-                        saveDialog.open()
+                    onClicked: saveDialog.open()
                 }
 
                 Button {
                     text: "LOAD"
-                    onClicked:
-                        loadDialog.open()
+                    onClicked: loadDialog.open()
                 }
 
                 Button {
                     text: "EXPORT"
-                    onClicked:
-                        exportDialog.open()
+                    onClicked: exportDialog.open()
                 }
 
                 Button {
                     text: "CLEAR"
-                    onClicked:
-                        clearConfirm.open()
+                    onClicked: clearConfirm.open()
                 }
             }
         }
@@ -183,7 +188,6 @@ ApplicationWindow {
                     anchors.topMargin: 20
                     anchors.bottomMargin: 20
                     spacing: 16
-
 
                     RowLayout {
                         Layout.fillWidth: true
@@ -216,9 +220,7 @@ ApplicationWindow {
                                 if (searchField.text.trim() === "") {
                                     ScryfallApi.loadRecommendations()
                                 } else {
-                                    ScryfallApi.searchCards(
-                                        searchField.text
-                                    )
+                                    ScryfallApi.searchCards(searchField.text)
                                 }
                             }
                         }
@@ -235,7 +237,7 @@ ApplicationWindow {
                     }
 
                     Text {
-                        text: ScryfallApi.loading ? "Searching Scryfall..." : searchField.text.trim() === "" ? "Recommended cards" : "Search results"
+                        text: ScryfallApi.loading ? "Searching Scryfall..." : (searchField.text.trim() === "" ? "Recommended cards" : "Search results")
                         color: "#c7a75a"
                         font.pixelSize: 16
                         font.bold: true
@@ -249,11 +251,21 @@ ApplicationWindow {
                         cellWidth: 190
                         cellHeight: 285
                         model: ScryfallApi.searchModel
-                        delegate: Item { width: 180; height: 275
-                            property bool legalCard:
-                                DeckManager.isLegalForCommander(
-                                    ScryfallApi.searchModel.cardAt(index)
-                                )
+                        delegate: Item {
+                            width: 180
+                            height: 275
+
+                            property bool legalCard: {
+                                var model = ScryfallApi.searchModel
+                                if (!model || index < 0 || index >= model.count)
+                                    return false
+
+                                var card = model.cardAt(index)
+                                if (!card)
+                                    return false
+
+                                return DeckManager.isLegalForCommander(card)
+                            }
 
                             Rectangle {
                                 anchors.fill: parent
@@ -318,6 +330,7 @@ ApplicationWindow {
                                 }
                             }
                         }
+
                         ScrollBar.vertical: ScrollBar {}
                     }
 
@@ -337,125 +350,69 @@ ApplicationWindow {
 
                             Image {
                                 Layout.preferredWidth: 145
-
                                 Layout.fillHeight: true
-
-                                source:
-                                    selectedCardImage
-
-                                fillMode:
-                                    Image.PreserveAspectFit
-
+                                source: selectedCardImage
+                                fillMode: Image.PreserveAspectFit
                                 asynchronous: true
-
                                 smooth: true
                             }
 
                             ColumnLayout {
-
                                 Layout.fillWidth: true
                                 Layout.fillHeight: true
-
                                 spacing: 7
 
                                 Text {
-
-                                    text:
-                                        selectedCardName
-
+                                    text: selectedCardName
                                     color: "#c7a75a"
-
                                     font.pixelSize: 21
-
                                     font.bold: true
                                 }
 
                                 Text {
-
-                                    text:
-                                        selectedCardMana
-
+                                    text: selectedCardMana
                                     color: "#d0cdc2"
-
                                     font.pixelSize: 14
                                 }
 
                                 Text {
-
-                                    text:
-                                        selectedCardType
-
+                                    text: selectedCardType
                                     color: "#8f8c80"
-
                                     font.pixelSize: 13
-
-                                    wrapMode:
-                                        Text.Wrap
+                                    wrapMode: Text.Wrap
                                 }
 
                                 Rectangle {
-
                                     Layout.fillWidth: true
-
                                     Layout.preferredHeight: 1
-
                                     color: "#3a382f"
                                 }
 
                                 Text {
-
                                     Layout.fillWidth: true
                                     Layout.fillHeight: true
-
-                                    text:
-                                        selectedCardText
-
+                                    text: selectedCardText
                                     color: "#d0cdc2"
-
                                     font.pixelSize: 13
-
-                                    wrapMode:
-                                        Text.WordWrap
-
-                                    verticalAlignment:
-                                        Text.AlignTop
-
+                                    wrapMode: Text.WordWrap
+                                    verticalAlignment: Text.AlignTop
                                     maximumLineCount: 7
-
-                                    elide:
-                                        Text.ElideRight
+                                    elide: Text.ElideRight
                                 }
 
                                 RowLayout {
-
                                     Layout.fillWidth: true
 
                                     Button {
-
-                                        text:
-                                            "ADD TO DECK"
-
-                                        enabled:
-                                            selectedCardId !== ""
-
-                                        onClicked: {
-
-                                            addSelectedCard()
-                                        }
+                                        text: "ADD TO DECK"
+                                        enabled: selectedCardId !== ""
+                                        onClicked: addSelectedCard()
                                     }
 
                                     Button {
-
-                                        text:
-                                            "SET AS COMMANDER"
-
-                                        enabled:
-                                            selectedCardId !== ""
-
-                                        onClicked: {
-
-                                            addSelectedCommander()
-                                        }
+                                        text: "SET AS COMMANDER"
+                                        enabled: selectedCardId !== ""
+                                        onClicked: addSelectedCommander()
                                     }
 
                                     Item {
@@ -470,12 +427,10 @@ ApplicationWindow {
 
             DeckPanel {
                 id: deckPanel
-
                 Layout.preferredWidth: 390
                 Layout.fillHeight: true
 
                 onCommanderChanged: {
-
                     if (commanderFilter)
                         refreshCommanderColors()
                 }
@@ -483,169 +438,96 @@ ApplicationWindow {
         }
     }
 
-
     Timer {
-
         id: searchTimer
-
         interval: 350
-
         repeat: false
-
         onTriggered: {
-
             if (searchField.text.trim() === "") {
-
                 ScryfallApi.loadRecommendations()
-
             } else {
-
-                ScryfallApi.searchCards(
-                    searchField.text
-                )
+                ScryfallApi.searchCards(searchField.text)
             }
         }
     }
 
-
     FileDialog {
-
         id: saveDialog
-
         title: "Save Deck"
-
-        fileMode:
-            FileDialog.SaveFile
-
-        nameFilters: [
-            "MTG Deck (*.json)"
-        ]
-
+        fileMode: FileDialog.SaveFile
+        nameFilters: ["MTG Deck (*.json)"]
         onAccepted: {
-
             DeckManager.saveDeck(
-                selectedFile.toString()
-                    .replace("file://", "")
+                selectedFile.toString().replace("file://", "")
             )
         }
     }
 
-
     FileDialog {
-
         id: loadDialog
-
         title: "Load Deck"
-
-        fileMode:
-            FileDialog.OpenFile
-
-        nameFilters: [
-            "MTG Deck (*.json)"
-        ]
-
+        fileMode: FileDialog.OpenFile
+        nameFilters: ["MTG Deck (*.json)"]
         onAccepted: {
-
             DeckManager.loadDeck(
-                selectedFile.toString()
-                    .replace("file://", "")
+                selectedFile.toString().replace("file://", "")
             )
-
             refreshCommanderColors()
             refreshDeck()
         }
     }
 
     FileDialog {
-
         id: exportDialog
-
         title: "Export Deck"
-
-        fileMode:
-            FileDialog.SaveFile
-
-        nameFilters: [
-            "Text Deck (*.txt)"
-        ]
-
+        fileMode: FileDialog.SaveFile
+        nameFilters: ["Text Deck (*.txt)"]
         onAccepted: {
-
             DeckManager.exportDeck(
-                selectedFile.toString()
-                    .replace("file://", "")
+                selectedFile.toString().replace("file://", "")
             )
         }
     }
 
-
     MessageDialog {
-
         id: clearConfirm
-
         title: "Clear Deck"
+        text: "Are you sure you want to clear the entire deck?"
+        buttons: MessageDialog.Yes | MessageDialog.No
 
-        text:
-            "Are you sure you want to clear the entire deck?"
-
-        buttons:
-            MessageDialog.Yes |
-            MessageDialog.No
-
-        onButtonClicked:
-            function(button, role) {
-
-                if (button === MessageDialog.Yes) {
-
-                    DeckManager.clearDeck()
-
-                    selectedCardId = ""
-                    selectedCardName = ""
-                    selectedCardImage = ""
-                    selectedCardType = ""
-                    selectedCardText = ""
-                    selectedCardMana = ""
-
-                    cardGrid.currentIndex = -1
-                }
+        onButtonClicked: function(button, role) {
+            if (button === MessageDialog.Yes) {
+                DeckManager.clearDeck()
+                selectedCardId = ""
+                selectedCardName = ""
+                selectedCardImage = ""
+                selectedCardType = ""
+                selectedCardText = ""
+                selectedCardMana = ""
+                cardGrid.currentIndex = -1
             }
+        }
     }
 
-
     Connections {
-
         target: DeckManager
-
         function onDeckChanged() {
-
             deckPanel.deckVersion++
         }
 
         function onDeckError(message) {
-
-            console.log(
-                "Deck error:",
-                message
-            )
+            console.log("Deck error:", message)
         }
     }
 
-
     Connections {
-
         target: ScryfallApi
-
         function onSearchError(message) {
-
-            console.log(
-                "Scryfall error:",
-                message
-            )
+            console.log("Scryfall error:", message)
         }
     }
 
     Component.onCompleted: {
-
         ScryfallApi.loadRecommendations()
     }
 }
