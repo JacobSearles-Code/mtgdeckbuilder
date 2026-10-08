@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - main
-
   workflow_dispatch:
 
 jobs:
@@ -24,15 +23,13 @@ jobs:
         shell: pwsh
         run: |
           cmake -S . -B build `
-            -G "Visual Studio 17 2022" `
-            -A x64
+            -G Ninja `
+            -DCMAKE_BUILD_TYPE=Release
 
       - name: Build
         shell: pwsh
         run: |
-          cmake --build build `
-            --config Release `
-            --parallel
+          cmake --build build --parallel
 
       - name: Create package directory
         shell: pwsh
@@ -46,13 +43,13 @@ jobs:
             --release `
             --qmldir . `
             --dir package `
-            build/Release/appmtgDeckBuilder.exe
+            build/appmtgDeckBuilder.exe
 
       - name: Copy executable
         shell: pwsh
         run: |
           Copy-Item `
-            build/Release/appmtgDeckBuilder.exe `
+            build/appmtgDeckBuilder.exe `
             package/appmtgDeckBuilder.exe
 
       - name: Create ZIP
