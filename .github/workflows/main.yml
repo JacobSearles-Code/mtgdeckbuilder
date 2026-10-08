@@ -25,11 +25,13 @@ jobs:
 
       - name: Configure CMake
         shell: pwsh
+        env:
+          Qt6_DIR: D:\a\_temp\setup-qt\Qt\6.11.2\win64_msvc2022_64\lib\cmake\Qt6
         run: |
           cmake -S . -B build `
             -A x64 `
             -DCMAKE_BUILD_TYPE=Release `
-            -DCMAKE_PREFIX_PATH="${{ env.CMAKE_PREFIX_PATH }}"
+            -DQt6_DIR="${{ env.Qt6_DIR }}"
 
       - name: Build
         shell: pwsh
