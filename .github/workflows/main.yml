@@ -16,27 +16,30 @@ jobs:
         uses: actions/checkout@v4
 
       - name: Install Qt 6.11.2
-        uses: jurplel/install-qt-action@v4
+        uses: jurplel/install-qt-action@v4.3.1
         with:
           version: '6.11.2'
-          host: windows
-          target: desktop
-          arch: win64_mingw
+          host: 'windows'
+          target: 'desktop'
+          arch: 'win64_msvc2022_64'
           modules: 'qtquickcontrols2'
+          cache: true
 
       - name: Configure CMake
         shell: pwsh
         run: |
           cmake -S . -B build `
-            -G "MinGW Makefiles" `
-            -DCMAKE_BUILD_TYPE=Release
+            -G "Visual Studio 17 2022" `
+            -A x64
 
-      - name: Build application
+      - name: Build
         shell: pwsh
         run: |
-          cmake --build build --config Release
+          cmake --build build `
+            --config Release `
+            --parallel
 
-      - name: Create deployment directory
+      - name: Create package directory
         shell: pwsh
         run: |
           New-Item -ItemType Directory -Force -Path package
@@ -48,13 +51,13 @@ jobs:
             --release `
             --qmldir . `
             --dir package `
-            build/appmtgDeckBuilder.exe
+            build/Release/appmtgDeckBuilder.exe
 
-      - name: Copy application
+      - name: Copy executable
         shell: pwsh
         run: |
           Copy-Item `
-            build/appmtgDeckBuilder.exe `
+            build/Release/appmtgDeckBuilder.exe `
             package/appmtgDeckBuilder.exe
 
       - name: Create ZIP
@@ -64,7 +67,7 @@ jobs:
             -Path package/* `
             -DestinationPath mtgDeckBuilder-Windows.zip
 
-      - name: Upload Windows application
+      - name: Upload Windows build
         uses: actions/upload-artifact@v4
         with:
           name: mtgDeckBuilder-Windows
