@@ -1,0 +1,271 @@
+{
+    "classes": [
+        {
+            "className": "DeckManager",
+            "lineNumber": 11,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "card",
+                            "type": "Card*"
+                        }
+                    ],
+                    "index": 2,
+                    "lineNumber": 45,
+                    "name": "addCard",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "card",
+                            "type": "Card*"
+                        }
+                    ],
+                    "index": 3,
+                    "lineNumber": 47,
+                    "name": "addCommander",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 4,
+                    "lineNumber": 49,
+                    "name": "removeCard",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 5,
+                    "lineNumber": 53,
+                    "name": "removeCommander",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 6,
+                    "isConst": true,
+                    "lineNumber": 57,
+                    "name": "quantity",
+                    "returnType": "int"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "id",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 7,
+                    "isConst": true,
+                    "lineNumber": 61,
+                    "name": "isInDeck",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "card",
+                            "type": "Card*"
+                        }
+                    ],
+                    "index": 8,
+                    "isConst": true,
+                    "lineNumber": 65,
+                    "name": "isLegalForCommander",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "card",
+                            "type": "Card*"
+                        }
+                    ],
+                    "index": 9,
+                    "isConst": true,
+                    "lineNumber": 69,
+                    "name": "categoryForCard",
+                    "returnType": "QString"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "category",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 10,
+                    "isConst": true,
+                    "lineNumber": 73,
+                    "name": "entries",
+                    "returnType": "QVariantList"
+                },
+                {
+                    "access": "public",
+                    "index": 11,
+                    "isConst": true,
+                    "lineNumber": 77,
+                    "name": "commanders",
+                    "returnType": "QVariantList"
+                },
+                {
+                    "access": "public",
+                    "index": 12,
+                    "lineNumber": 79,
+                    "name": "clearDeck",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "filePath",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 13,
+                    "lineNumber": 81,
+                    "name": "saveDeck",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "filePath",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 14,
+                    "lineNumber": 85,
+                    "name": "loadDeck",
+                    "returnType": "bool"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "filePath",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 15,
+                    "lineNumber": 89,
+                    "name": "exportDeck",
+                    "returnType": "bool"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "lineNumber": 15,
+                    "name": "cardCount",
+                    "notify": "deckChanged",
+                    "override": false,
+                    "read": "cardCount",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "lineNumber": 21,
+                    "name": "commanderCount",
+                    "notify": "deckChanged",
+                    "override": false,
+                    "read": "commanderCount",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "int",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 2,
+                    "lineNumber": 27,
+                    "name": "commanderColors",
+                    "notify": "deckChanged",
+                    "override": false,
+                    "read": "commanderColors",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "QStringList",
+                    "user": false,
+                    "virtual": false
+                }
+            ],
+            "qualifiedClassName": "DeckManager",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "lineNumber": 95,
+                    "name": "deckChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "message",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 1,
+                    "lineNumber": 97,
+                    "name": "deckError",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "DeckManager.h",
+    "outputRevision": 69
+}

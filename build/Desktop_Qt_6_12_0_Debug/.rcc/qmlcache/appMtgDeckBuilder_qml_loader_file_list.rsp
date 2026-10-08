@@ -1,0 +1,7 @@
+--resource
+/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug/.qt/rcc/qmake_MtgDeckBuilder.qrc
+--resource
+/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug/.qt/rcc/appMtgDeckBuilder_raw_qml_0.qrc
+/MtgDeckBuilder/qml/Main.qml
+/MtgDeckBuilder/qml/CardDelegate.qml
+/MtgDeckBuilder/qml/DeckPanel.qml

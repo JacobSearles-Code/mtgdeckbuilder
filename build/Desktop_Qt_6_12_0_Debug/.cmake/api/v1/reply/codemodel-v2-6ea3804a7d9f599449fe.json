@@ -1,0 +1,240 @@
+{
+	"configurations" : 
+	[
+		{
+			"directories" : 
+			[
+				{
+					"build" : ".",
+					"jsonFile" : "directory-.-Debug-f5ebdc15457944623624.json",
+					"minimumCMakeVersion" : 
+					{
+						"string" : "3.16"
+					},
+					"projectIndex" : 0,
+					"source" : ".",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20
+					]
+				}
+			],
+			"name" : "Debug",
+			"projects" : 
+			[
+				{
+					"directoryIndexes" : 
+					[
+						0
+					],
+					"name" : "mtgDeckBuilder",
+					"targetIndexes" : 
+					[
+						0,
+						1,
+						2,
+						3,
+						4,
+						5,
+						6,
+						7,
+						8,
+						9,
+						10,
+						11,
+						12,
+						13,
+						14,
+						15,
+						16,
+						17,
+						18,
+						19,
+						20
+					]
+				}
+			],
+			"targets" : 
+			[
+				{
+					"directoryIndex" : 0,
+					"id" : "all_aotstats::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_aotstats-Debug-6674980b98e27b2bdd15.json",
+					"name" : "all_aotstats",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint-Debug-4f07d6d708d3aca590a2.json",
+					"name" : "all_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_json-Debug-e0b6247ed669568045e3.json",
+					"name" : "all_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmllint_module-Debug-2a9e90909917de059cda.json",
+					"name" : "all_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "all_qmltyperegistrations::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-all_qmltyperegistrations-Debug-0795ed94bfc90bda3bc8.json",
+					"name" : "all_qmltyperegistrations",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmtgDeckBuilder::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmtgDeckBuilder-Debug-e7ea7f1530910092b4e1.json",
+					"name" : "appmtgDeckBuilder",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmtgDeckBuilder_autogen::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmtgDeckBuilder_autogen-Debug-0cd3a5fb0a85d1d32e09.json",
+					"name" : "appmtgDeckBuilder_autogen",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmtgDeckBuilder_autogen_timestamp_deps::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmtgDeckBuilder_autogen_timestamp_deps-Debug-a73065280b9f3219d66b.json",
+					"name" : "appmtgDeckBuilder_autogen_timestamp_deps",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmtgDeckBuilder_copy_qml::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmtgDeckBuilder_copy_qml-Debug-988dfdaed20dd84e79d2.json",
+					"name" : "appmtgDeckBuilder_copy_qml",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmtgDeckBuilder_copy_res::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmtgDeckBuilder_copy_res-Debug-eaf629a97e2dd53bd195.json",
+					"name" : "appmtgDeckBuilder_copy_res",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmtgDeckBuilder_qmlimportscan::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmtgDeckBuilder_qmlimportscan-Debug-e48bcdadf5a52c039a7d.json",
+					"name" : "appmtgDeckBuilder_qmlimportscan",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmtgDeckBuilder_qmllint::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmtgDeckBuilder_qmllint-Debug-62fc27cffd27beba95c3.json",
+					"name" : "appmtgDeckBuilder_qmllint",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmtgDeckBuilder_qmllint_json::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmtgDeckBuilder_qmllint_json-Debug-a49d78ffd68e139114b6.json",
+					"name" : "appmtgDeckBuilder_qmllint_json",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmtgDeckBuilder_qmllint_module::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmtgDeckBuilder_qmllint_module-Debug-2aa41de0d23fde52fa43.json",
+					"name" : "appmtgDeckBuilder_qmllint_module",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmtgDeckBuilder_qmlpreview::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmtgDeckBuilder_qmlpreview-Debug-4142481032d3b8db431a.json",
+					"name" : "appmtgDeckBuilder_qmlpreview",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "appmtgDeckBuilder_qmltyperegistration::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-appmtgDeckBuilder_qmltyperegistration-Debug-f02b5669e912b3b29b4f.json",
+					"name" : "appmtgDeckBuilder_qmltyperegistration",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "clean_qml_context_properties::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-clean_qml_context_properties-Debug-b070877d23b1e8580000.json",
+					"name" : "clean_qml_context_properties",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "dump_qml_context_properties::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-dump_qml_context_properties-Debug-bc0a495452a4b50d6ec1.json",
+					"name" : "dump_qml_context_properties",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "generate_finalqtconf_appmtgDeckBuilder::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate_finalqtconf_appmtgDeckBuilder-Debug-fad8ca8609c675d68498.json",
+					"name" : "generate_finalqtconf_appmtgDeckBuilder",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "generate_qmlls_build_ini_file::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-generate_qmlls_build_ini_file-Debug-c732ac1ac17ec0be16b4.json",
+					"name" : "generate_qmlls_build_ini_file",
+					"projectIndex" : 0
+				},
+				{
+					"directoryIndex" : 0,
+					"id" : "module_appmtgDeckBuilder_aotstats_target::@6890427a1f51a3e7e1df",
+					"jsonFile" : "target-module_appmtgDeckBuilder_aotstats_target-Debug-54987d3b0c664423f322.json",
+					"name" : "module_appmtgDeckBuilder_aotstats_target",
+					"projectIndex" : 0
+				}
+			]
+		}
+	],
+	"kind" : "codemodel",
+	"paths" : 
+	{
+		"build" : "/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug",
+		"source" : "/home/jacob/mtgDeckBuilder"
+	},
+	"version" : 
+	{
+		"major" : 2,
+		"minor" : 7
+	}
+}

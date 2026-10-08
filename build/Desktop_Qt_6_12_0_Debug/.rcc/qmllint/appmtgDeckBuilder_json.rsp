@@ -1,0 +1,17 @@
+--bare
+-I
+/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug
+-I
+/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug/mtgDeckBuilder
+-I
+/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug
+-I
+/home/jacob/Qt/6.12.0/gcc_64/qml
+--resource
+/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug/.qt/rcc/qmake_mtgDeckBuilder.qrc
+--resource
+/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug/.qt/rcc/appmtgDeckBuilder_raw_qml_0.qrc
+/home/jacob/mtgDeckBuilder/Main.qml
+/home/jacob/mtgDeckBuilder/DeckPanel.qml
+--json
+/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug/appmtgDeckBuilder_qmllint.json

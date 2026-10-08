@@ -1,0 +1,7 @@
+module mtgDeckBuilder
+typeinfo appmtgDeckBuilder.qmltypes
+prefer :/mtgDeckBuilder/
+Main 1.0 Main.qml
+DeckPanel 1.0 DeckPanel.qml
+depends QtQuick
+

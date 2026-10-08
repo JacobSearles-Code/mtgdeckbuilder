@@ -1,0 +1,7 @@
+<RCC>
+  <qresource prefix="/mtgDeckBuilder/">
+    <file alias="Main.qml">/home/jacob/mtgDeckBuilder/Main.qml</file>
+    <file alias="DeckPanel.qml">/home/jacob/mtgDeckBuilder/DeckPanel.qml</file>
+  </qresource>
+</RCC>
+

@@ -1,0 +1,117 @@
+{
+    "classes": [
+        {
+            "className": "ScryfallApi",
+            "lineNumber": 10,
+            "methods": [
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "query",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 3,
+                    "lineNumber": 34,
+                    "name": "searchCards",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 4,
+                    "lineNumber": 38,
+                    "name": "loadRecommendations",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "colors",
+                            "type": "QStringList"
+                        }
+                    ],
+                    "index": 5,
+                    "lineNumber": 40,
+                    "name": "setCommanderColors",
+                    "returnType": "void"
+                }
+            ],
+            "object": true,
+            "properties": [
+                {
+                    "constant": true,
+                    "designable": true,
+                    "final": false,
+                    "index": 0,
+                    "lineNumber": 14,
+                    "name": "searchModel",
+                    "override": false,
+                    "read": "searchModel",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "CardModel*",
+                    "user": false,
+                    "virtual": false
+                },
+                {
+                    "constant": false,
+                    "designable": true,
+                    "final": false,
+                    "index": 1,
+                    "lineNumber": 20,
+                    "name": "loading",
+                    "notify": "loadingChanged",
+                    "override": false,
+                    "read": "loading",
+                    "required": false,
+                    "scriptable": true,
+                    "stored": true,
+                    "type": "bool",
+                    "user": false,
+                    "virtual": false
+                }
+            ],
+            "qualifiedClassName": "ScryfallApi",
+            "signals": [
+                {
+                    "access": "public",
+                    "index": 0,
+                    "lineNumber": 46,
+                    "name": "loadingChanged",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "index": 1,
+                    "lineNumber": 48,
+                    "name": "searchFinished",
+                    "returnType": "void"
+                },
+                {
+                    "access": "public",
+                    "arguments": [
+                        {
+                            "name": "message",
+                            "type": "QString"
+                        }
+                    ],
+                    "index": 2,
+                    "lineNumber": 50,
+                    "name": "searchError",
+                    "returnType": "void"
+                }
+            ],
+            "superClasses": [
+                {
+                    "access": "public",
+                    "name": "QObject"
+                }
+            ]
+        }
+    ],
+    "inputFile": "ScryfallApi.h",
+    "outputRevision": 69
+}

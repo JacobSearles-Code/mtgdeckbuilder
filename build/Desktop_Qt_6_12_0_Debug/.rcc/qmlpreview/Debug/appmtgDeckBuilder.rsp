@@ -1,0 +1,6 @@
+--interactive
+--resource
+/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug/.qt/rcc/qmake_mtgDeckBuilder.qrc
+--resource
+/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug/.qt/rcc/appmtgDeckBuilder_raw_qml_0.qrc
+/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug/appmtgDeckBuilder

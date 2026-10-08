@@ -1,0 +1,14 @@
+-rootPath
+/home/jacob/mtgDeckBuilder
+-cmake-output
+-output-file
+/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug/.qt/qml_imports/appmtgDeckBuilder_conf.cmake
+-importPath
+/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug
+-importPath
+/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug/mtgDeckBuilder
+-importPath
+/home/jacob/Qt/6.12.0/gcc_64/qml
+-qrcFiles
+/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug/.qt/rcc/qmake_mtgDeckBuilder.qrc
+/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug/.qt/rcc/appmtgDeckBuilder_raw_qml_0.qrc

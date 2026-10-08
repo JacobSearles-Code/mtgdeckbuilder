@@ -1,0 +1,6 @@
+<RCC>
+  <qresource prefix="/mtgDeckBuilder">
+    <file alias="qmldir">/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug/mtgDeckBuilder/qmldir</file>
+  </qresource>
+</RCC>
+

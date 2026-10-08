@@ -1,0 +1,4 @@
+/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug/appmtgDeckBuilder_autogen/include/../EWIEGA46WW/moc_Card.cpp.json
+/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug/appmtgDeckBuilder_autogen/include/../EWIEGA46WW/moc_CardModel.cpp.json
+/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug/appmtgDeckBuilder_autogen/include/../EWIEGA46WW/moc_DeckManager.cpp.json
+/home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug/appmtgDeckBuilder_autogen/include/../EWIEGA46WW/moc_ScryfallApi.cpp.json

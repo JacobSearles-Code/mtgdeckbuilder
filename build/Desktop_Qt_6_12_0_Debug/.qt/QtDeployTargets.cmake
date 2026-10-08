@@ -1,0 +1,3 @@
+set(__QT_DEPLOY_TARGETS "appmtgDeckBuilder")
+set(__QT_DEPLOY_TARGET_appmtgDeckBuilder_FILE /home/jacob/mtgDeckBuilder/build/Desktop_Qt_6_12_0_Debug/appmtgDeckBuilder)
+set(__QT_DEPLOY_TARGET_appmtgDeckBuilder_TYPE EXECUTABLE)
