@@ -19,24 +19,29 @@ qt_standard_project_setup()
 
 qt_add_executable(appmtgDeckBuilder
     main.cpp
-
     Card.h
     Card.cpp
-
     CardModel.h
     CardModel.cpp
-
     ScryfallApi.h
     ScryfallApi.cpp
-
     DeckManager.h
     DeckManager.cpp
+)
+
+target_link_libraries(appmtgDeckBuilder
+    Qt6::Core
+    Qt6::Gui
+    Qt6::Quick
+    Qt6::QuickControls2
+    Qt6::Qml
+    Qt6::QmlIntegration
+    Qt6::Network
 )
 
 qt_add_qml_module(appmtgDeckBuilder
     URI mtgDeckBuilder
     VERSION 1.0
-
     QML_FILES
         Main.qml
         DeckPanel.qml
