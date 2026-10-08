@@ -40,6 +40,7 @@ qt_add_qml_module(appmtgDeckBuilder
 
 target_link_libraries(appmtgDeckBuilder
     PRIVATE
+        Qt6::Core
         Qt6::Quick
         Qt6::QuickControls2
         Qt6::Network
