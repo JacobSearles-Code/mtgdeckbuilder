@@ -9,7 +9,7 @@
 int main(int argc, char *argv[])
 {
     std::cout << "App starting..." << std::endl;
-    
+
     QGuiApplication app(argc, argv);
     std::cout << "QGuiApplication created" << std::endl;
 
@@ -26,8 +26,11 @@ int main(int argc, char *argv[])
         &engine,
         &QQmlApplicationEngine::objectCreationFailed,
         &app,
-        []() {
+        [&engine]() {
             std::cerr << "QML object creation failed!" << std::endl;
+            for (const auto &error : engine.errors()) {
+                std::cerr << "QML error: " << error.toString().toStdString() << std::endl;
+            }
             QCoreApplication::exit(-1);
         },
         Qt::QueuedConnection
